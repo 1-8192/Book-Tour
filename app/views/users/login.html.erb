@@ -1,0 +1,14 @@
+<h1>Welcome Back to Book Tour!</h1>
+<%= form_with(:session, url: login_path) do |f| %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email%>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit "Log In" %>
+
+<% end %>
+
+<%# link to create new user %>
