@@ -13,5 +13,5 @@ Destination.destroy_all
 end
 
 12.times do
-  Book.create(title: Faker::Book.title, author: Faker::Book.author, description: Faker::Lorem.paragraph, publication_date: rand(1700..2019))
+  Book.create(title: Faker::Book.title, author: Faker::Book.author, description: Faker::Lorem.paragraph, publication_date: rand(1700..2019), genre: Faker::Book.genre)
 end
