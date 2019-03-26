@@ -1,0 +1,9 @@
+<h1> Hello, <%= @user.username %>. Welcome back. </h1>
+
+Your trips:
+
+<%= link_to "Explore destinations", destinations_path %>
+
+<%= form_tag('/logout', method: :destroy) do %>
+<%= submit_tag "Logout" %>
+<% end %>
