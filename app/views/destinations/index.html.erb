@@ -1,0 +1,8 @@
+<h1>Which Destination Would You Like to Learn More About?</h1>
+
+<% @destinations.each do |d| %>
+
+<div class="">
+  <%= link_to d.name, d %>
+</div>
+<% end %>
