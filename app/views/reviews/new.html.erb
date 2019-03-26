@@ -1,0 +1,16 @@
+<h1>WRITE YOUR REVIEW</h1>
+
+<%= form_for @review do |f| %>
+
+  <%= f.label :book %>
+  <%= f.text_field :book, value: @book.title %><br>
+
+  <%= f.collection_select :destination_id, Destination.all, :id, :name %><br>
+
+  <%= f.label :review_title %>
+  <%= f.text_field :title %><br>
+
+  <%= f.text_area(:review_body, :size => "50x10") %>
+  <%= f.submit "Submit Review" %>
+
+<% end %>

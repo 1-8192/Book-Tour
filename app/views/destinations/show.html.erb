@@ -6,4 +6,16 @@
   <li><%= @destination.description %></li>
 </ul>
 
+<h2>Tailored Book Recs</h2>
+<ul>
+  <%@destinations.reviews.each do |review| %>
+  <li> <%= link_to review.book.title, "/books/review.book.id" %> </li>
+</ul>
+
+<h2> link_to "Read Reviews", </h2>
+
+
+
+
+
 <%# list of connected reviews and books %>

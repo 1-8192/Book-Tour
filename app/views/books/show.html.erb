@@ -5,3 +5,9 @@
   <li><%= @book.description %></li>
   <li><%= @book.publication_date %></li>
 </ul>
+
+
+<%= form_for(url: new_review_path, method: :get) do |f| %>
+  <%= f.hidden_field :book_id, :value => @book.id %>
+  <%= f.submit 'Review This Book' %>
+<% end %>
