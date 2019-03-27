@@ -1,7 +1,5 @@
 <h1> Hello, <%= @user.username %>. Welcome back. </h1>
 
-Your trips:
-
 <%= link_to "Explore destinations", destinations_path %>
 Your Reviews:
 <ul>
@@ -9,6 +7,18 @@ Your Reviews:
   <li><%= link_to r.title, r %></li>
 <ul>
   <%end%>
+
+Your trip reading lists:
+<ul>
+  <% @dest_array.each  do |da| %>
+  <li><%= da.name%></li>
+  <%= form_tag reading_list_path, method: :get do %>
+  <%= hidden_field_tag :destination_id, da.id %>
+  <%= submit_tag 'View List'%>
+  <%end%>
+  <%end%>
+</ul>
+
 
 <%= form_tag(logout_path, method: :delete) do %>
 <%= submit_tag "Logout" %>

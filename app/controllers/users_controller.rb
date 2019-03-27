@@ -21,6 +21,12 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @reviews = Review.where(user_id: @user.id)
+    @reading_lists = ReadingList.where(user_id: @user.id)
+    array = []
+    @reading_lists.each do |rl|
+      array << rl.destination
+    end
+    @dest_array = array.uniq
   end
 
   private

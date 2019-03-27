@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_26_180345) do
+ActiveRecord::Schema.define(version: 2019_03_27_174913) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 2019_03_26_180345) do
   end
 
   create_table "reading_lists", force: :cascade do |t|
-    t.integer "trip_year"
     t.integer "user_id"
     t.integer "destination_id"
     t.integer "book_id"
