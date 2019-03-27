@@ -1,17 +1,19 @@
 class UsersController < ApplicationController
+  before_action :authorized, except: [:home, :new, :create]
 
   def home
     render :layout => false
   end
 
   def new
-    render :layout => false
     @user = User.new
+    render :layout => false
   end
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
     if @user.valid?
+      @user.save
       session[:user_id] = @user.id
       redirect_to @user
     else
@@ -22,12 +24,13 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @reviews = Review.where(user_id: @user.id)
-    @reading_lists = ReadingList.where(user_id: @user.id)
-    array = []
-    @reading_lists.each do |rl|
-      array << rl.destination
-    end
-    @dest_array = array.uniq
+    @destination_array = @user.get_reading_lists
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.delete
+    redirect_to root_url
   end
 
   private

@@ -8,9 +8,20 @@
 
 <h2>Tailored Book Recs</h2>
 <ul>
-  <%@destination.reviews.each do |review| %>
-  <li><a href="/books/<%=review.book_id%>"><%=review.book.title%></a> </li>
+  <%@uniq_reviews.each do |book| %>
+  <li><a href="/books/<%=book.id%>"><%=book.title%></a> </li>
 </ul>
 <%end%>
 
-<h2> link_to "Read Reviews", </h2>
+<h2> Here are some reviews of books to make this trip special:</h2>
+Review for:<%= @revsample1.book.title %><br>
+Writte by user:<%= @revsample1.user.username%><br>
+<%= @revsample1.title %><br>
+
+<%= @revsample1.review_body %><br>
+
+Review for:<%= @revsample2.book.title %><br>
+Writte by user:<%= @revsample2.user.username%><br>
+<%= @revsample2.title %><br>
+
+<%= @revsample2.review_body %><br>
