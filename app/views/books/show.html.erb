@@ -14,6 +14,15 @@ Reviews by other travelers who have read this book:
 <ul>
   <%end%>
 
+
+
+
+<%= form_tag(new_reading_list_path, method: :get) do %>
+  <%= hidden_field_tag :book_id, @book.id %>
+  <%= collection_select :destination_id, Destination.all, :id, :name %>
+<% end %>
+
+
 <%= form_tag(new_review_path, method: :get) do %>
   <%= hidden_field_tag :book_id, @book.id %>
   <%= submit_tag 'Review This Book' %>
