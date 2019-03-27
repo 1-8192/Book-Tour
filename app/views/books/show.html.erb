@@ -2,12 +2,13 @@
 
 <ul>
   <li><%= @book.author %></li>
+  <li><%= @book.genre %></li>
   <li><%= @book.description %></li>
   <li><%= @book.publication_date %></li>
 </ul>
 
 
-<%= form_for(url: new_review_path, method: :get) do |f| %>
-  <%= f.hidden_field :book_id, :value => @book.id %>
-  <%= f.submit 'Review This Book' %>
+<%= form_tag(new_review_path, method: :get) do %>
+  <%= hidden_field_tag :book_id, @book.id %>
+  <%= submit_tag 'Review This Book' %>
 <% end %>
