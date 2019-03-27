@@ -10,6 +10,6 @@ Your Reviews:
 <ul>
   <%end%>
 
-<%= form_tag('logout', method: :destroy) do %>
+<%= form_tag(logout_path, method: :delete) do %>
 <%= submit_tag "Logout" %>
 <% end %>
