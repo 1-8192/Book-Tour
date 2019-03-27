@@ -7,6 +7,12 @@
   <li><%= @book.publication_date %></li>
 </ul>
 
+Reviews by other travelers who have read this book:
+<ul>
+  <% @reviews.each do |r| %>
+  <li><%= link_to r.title, r %></li>
+<ul>
+  <%end%>
 
 <%= form_tag(new_review_path, method: :get) do %>
   <%= hidden_field_tag :book_id, @book.id %>

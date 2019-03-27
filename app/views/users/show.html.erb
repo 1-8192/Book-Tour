@@ -3,6 +3,12 @@
 Your trips:
 
 <%= link_to "Explore destinations", destinations_path %>
+Your Reviews:
+<ul>
+  <% @reviews.each do |r| %>
+  <li><%= link_to r.title, r %></li>
+<ul>
+  <%end%>
 
 <%= form_tag('logout', method: :destroy) do %>
 <%= submit_tag "Logout" %>
