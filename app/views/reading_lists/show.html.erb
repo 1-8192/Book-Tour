@@ -1,7 +1,11 @@
 <h1> Reading list for your trip to <%= @reading_lists[0].destination.name %></h1>
 
-<ul>
-  <% @reading_lists.each do |rl| %>
-  <li><%= link_to rl.book.title, book_path%></li>
-  <%end%>
-</ul>
+  <ul>
+    <% @reading_lists.each do |rl| %>
+    <li><%= link_to rl.book.title, book_path%></li>
+    <%= form_tag reading_list_path, method: :delete do %>
+    <%= hidden_field_tag :reading_list_id, rl.id %>
+    <%= submit_tag 'Remove from list'%>
+    <%end%>
+    <%end%>
+  </ul>

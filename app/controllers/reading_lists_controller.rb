@@ -17,6 +17,17 @@ class ReadingListsController < ApplicationController
 
   def show
     @reading_lists = ReadingList.where(user_id: session[:user_id], destination_id: params[:destination_id])
+    if @reading_lists.empty?
+      redirect_to user_path(session[:user_id])
+    else
+      render :show
+    end
+  end
+
+  def destroy
+    @reading_list = ReadingList.find(params[:reading_list_id])
+    @reading_list.destroy
+    redirect_to request.referer
   end
 
 end
