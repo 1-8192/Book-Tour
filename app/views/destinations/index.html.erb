@@ -1,4 +1,4 @@
-<h1>Which Destination Would You Like to Learn More About?</h1>
+<h5>Which Destination Would You Like to Learn More About?</h5>
 
 <h5>Filter Destinations by Country:</h5>
 <%= form_tag(destinations_path, method: :get) do  %>
@@ -11,9 +11,14 @@
 <%= submit_tag "I'm feeling lucky" %>
 <%end%>
 
-<% @destinations.each do |d| %>
-
-<div class="">
-  <%= link_to d.name, d %>
+<div class="columns is-multiline is-centered">
+  <% @destinations.each do |d| %>
+    <div class="column is-one-third">
+      <div class="notification">
+        <%= link_to d.name, d %>
+        <p class="is-size-4"><%= d.description %>
+        </p>
+      </div>
+    </div>
+    <% end %>
 </div>
-<% end %>

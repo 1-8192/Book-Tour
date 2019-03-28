@@ -1,14 +1,72 @@
-<h1>Welcome Back to Book Tour!</h1>
-<%= form_for(:session, url: login_path) do |f| %>
+<!DOCTYPE html>
+<html>
 
-  <%= f.label :email %>
-  <%= f.email_field :email%>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Book Tour</title>
+    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Bulma Version 0.7.4-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.4/css/bulma.min.css" />
+    <%= stylesheet_link_tag    'stylesheet', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+<body>
+  <div class="bg-img">
 
-  <%= f.submit "Log In" %>
+    <section class="hero is-info is-fullheight" id="bg-img">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="../">
+                            HOME
+                        </a>
 
-<% end %>
+                    </div>
 
-<%# link to create new user %>
+                </div>
+            </nav>
+            </div>
+
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <div class="column is-6 is-offset-3">
+                        <h1 class="title">
+                            Welome Back!
+                        </h1>
+                        <h2 class="subtitle">
+                            Log into your account to start browsing destinations and book recommendations.
+                        </h2>
+                        <div class="box">
+                            <div class="field is-grouped">
+
+                                <p class="column is-centered has-text-centered">
+                                  <%= form_for(:session, url: login_path) do |f| %>
+
+                                    <%= f.label :email %>
+                                    <%= f.email_field :email%><br>
+
+                                    <%= f.label :password %>
+                                    <%= f.password_field :password %><br>
+
+                                    <%= f.submit "Log In" %>
+
+                                  <% end %>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+    <script async type="text/javascript" src="../js/bulma.js"></script>
+</div>
+</body>
+
+</html>

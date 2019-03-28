@@ -1,27 +1,86 @@
-<h1> Register Yourself!</h1>
+<!DOCTYPE html>
+<html>
 
-<ul style="color: red;">
-  <% @user.errors.full_messages.each do |message| %>
-  <li>
-    <%= message %>
-  </li>
-  <% end %>
-</ul>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Book Tour</title>
+    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Bulma Version 0.7.4-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.4/css/bulma.min.css" />
+    <%= stylesheet_link_tag    'stylesheet', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
 
-<%= form_for @user do |f| %>
+<body>
+  <div class="bg-img">
 
-  <%= f.label :username %>
-  <%= f.text_field :username %><br>
+    <section class="hero is-info is-fullheight" id="bg-img">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="../">
+                            HOME
+                        </a>
 
-  <%= f.label :email %>
-  <%= f.email_field :email%><br>
+                    </div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %><br>
+                </div>
+            </nav>
+            </div>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %><br>
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <div class="column is-6 is-offset-3">
+                        <h1 class="title">
+                            Hello New Friend!
+                        </h1>
+                        <h2 class="subtitle">
+                            Enter some required info and then start tayloring your trip reading lists!
+                        </h2>
+                        <div class="box">
+                            <div class="field is-grouped">
 
-  <%= f.submit "Create Account" %>
+                                <p class="column is-centered has-text-centered">
+                                  <ul style="color: red;">
+                                    <% @user.errors.full_messages.each do |message| %>
+                                    <li>
+                                      <%= message %>
+                                    </li>
+                                    <% end %>
+                                  </ul>
 
-<% end %>
+                                  <%= form_for @user do |f| %>
+
+                                    <%= f.label :username %>
+                                    <%= f.text_field :username %><br>
+
+                                    <%= f.label :email %>
+                                    <%= f.email_field :email%><br>
+
+                                    <%= f.label :password %>
+                                    <%= f.password_field :password %><br>
+
+                                    <%= f.label :password_confirmation %>
+                                    <%= f.password_field :password_confirmation %><br>
+
+                                    <%= f.submit "Create Account" %>
+
+                                  <% end %>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+    <script async type="text/javascript" src="../js/bulma.js"></script>
+</div>
+</body>
+
+</html>

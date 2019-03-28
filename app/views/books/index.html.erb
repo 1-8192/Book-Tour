@@ -11,9 +11,14 @@
 <%= submit_tag "I'm feeling lucky" %>
 <%end%>
 
-<% @books.each do |b| %>
-
-<div class="">
-  <%= link_to b.title, b %>
+<div class="columns is-multiline is-centered">
+  <% @books.each do |b| %>
+    <div class="column is-one-quarter">
+      <div class="notification">
+        <%= link_to b.title, b %>
+        <p class="is-size-5"> By <%= b.author %>
+        </p>
+      </div>
+    </div>
+    <% end %>
 </div>
-<% end %>

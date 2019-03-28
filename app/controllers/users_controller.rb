@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authorized, except: [:home, :new, :create]
 
   def home
-    # render :layout => false
+    render :layout => false
   end
 
   def new

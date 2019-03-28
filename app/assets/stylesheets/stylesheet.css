@@ -2,12 +2,17 @@ body {
   font-family: sans-serif;
 }
 
-
+.center, .center-column, .top, .right, .bottom, .left {
+  display: flex;
+  flex_direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
 
 /* ////////////////////////// HOME PAGE //////////////////////////// */
 
-.home {
+/* .home {
   background-image: url("world_map.jpg");
   background-position: center;
   background-size: cover;
@@ -26,6 +31,14 @@ body {
 
 .home a:hover {
   background-color: gray;
+} */
+
+#bg-img {
+  background: url("world_map.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 
@@ -53,7 +66,7 @@ header {
 
 
 
-nav ul {
+/* nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -75,6 +88,6 @@ nav li a {
 }
 
 /* Change the link color to #111 (black) on hover */
-nav li a:hover {
+/* nav li a:hover {
   background-color: #111;
-}
+} */
