@@ -6,22 +6,30 @@ class Book < ApplicationRecord
   has_many :users, through: :reviews
   has_many :destinations, through: :reviews
 
-
-
   def self.search_by_title(search)
-    # byebug
     if search
-
-      self.where("title LIKE ?", "%#{search}%")
-
-    else
+      temp_array= self.where("title LIKE ?", "%#{search}%")
+      if !temp_array.empty?
+        temp_array
+      else
         self.all
+      end
+    else
+      self.all
     end
-
-
   end
 
-
-
+  def self.search_by_author(search)
+    if search
+      temp_array = self.where("author LIKE ?", "%#{search}%")
+      if !temp_array.empty?
+        temp_array
+      else
+        self.all
+      end
+    else
+      self.all
+    end
+  end
 
 end

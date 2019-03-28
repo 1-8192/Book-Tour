@@ -21,4 +21,12 @@ class Destination < ApplicationRecord
     return sample
   end
 
+  def self.search_by_country(search)
+    if search
+      self.where("country LIKE ?", "%#{search}%")
+    else
+      self.all
+    end
+  end
+
 end

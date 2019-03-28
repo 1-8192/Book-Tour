@@ -1,5 +1,11 @@
 <h1>Which Destination Would You Like to Learn More About?</h1>
 
+<h5>Filter Destinations by Country:</h5>
+<%= form_tag(destinations_path, method: :get) do  %>
+<%= text_field_tag :search %>
+<%= submit_tag "Search"%>
+<% end %>
+
 <% @destinations.each do |d| %>
 
 <div class="">

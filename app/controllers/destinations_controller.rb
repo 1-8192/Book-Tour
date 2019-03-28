@@ -1,7 +1,7 @@
 class DestinationsController < ApplicationController
 
   def index
-    @destinations = Destination.all
+    @destinations = Destination.search_by_country(params[:search])
   end
 
   def show
@@ -10,7 +10,6 @@ class DestinationsController < ApplicationController
     @revsample2 = @destination.get_sample
     @uniq_reviews = @destination.get_uniq_reviews
   end
-
 
 
 end

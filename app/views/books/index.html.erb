@@ -1,9 +1,9 @@
 <h1>Books</h1>
 
-<h5>Find Book By Title</h5>
-<%= form_with method: :get, url: "/books" do |f| %>
-<%= f.text_field :search %>
-<%= f.submit "Search" %>
+<h5>Find Books by Title or Author</h5>
+<%= form_tag(books_path, method: :get) do  %>
+<%= text_field_tag :search %>
+<%= submit_tag "Search"%>
 <% end %>
 
 

@@ -18,5 +18,6 @@ class User < ApplicationRecord
       array << rl.destination
     end
     return array.uniq
-  end 
+  end
+
 end
