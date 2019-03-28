@@ -1,5 +1,8 @@
-<ul>
+Number of registered users: <%= @users.count %><br>
+
   <% @users.each do |u| %>
-  <li><%= u.username %> Number of reviews: <%= u.reviews.count %>
+  <li><%= u.username %> Total reviews: <%= u.reviews.count %>
   <%end%>
-</ul>
+</ul><br>
+
+Destination with most reviewed Books: <%= Destination.most_read_destination.name %>

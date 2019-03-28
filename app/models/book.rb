@@ -6,6 +6,7 @@ class Book < ApplicationRecord
   has_many :users, through: :reviews
   has_many :destinations, through: :reviews
 
+
   def self.search_by_title(search)
     if search
       temp_array= self.where("title LIKE ?", "%#{search}%")

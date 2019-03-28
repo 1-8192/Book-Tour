@@ -33,4 +33,17 @@ class Destination < ApplicationRecord
     self.all.sample
   end
 
+  def self.most_read_destination
+    i = 0
+    most_read_dest = []
+    self.all.each do |dest|
+      x = dest.books.count
+      if x > i
+        most_read_dest = dest
+        i = x
+      end
+    end
+    most_read_dest
+  end
+
 end

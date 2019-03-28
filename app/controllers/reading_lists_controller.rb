@@ -1,8 +1,7 @@
 class ReadingListsController < ApplicationController
   before_action :authorized
-  
-  def new
 
+  def new
   end
 
   def create

@@ -1,5 +1,13 @@
 <h1>WRITE YOUR REVIEW</h1>
 
+<ul style="color: red;">
+  <% @review.errors.full_messages.each do |message| %>
+  <li>
+    <%= message %>
+  </li>
+  <% end %>
+</ul>
+
 <%= form_for @review do |f| %>
 
   <%= f.label :book %>

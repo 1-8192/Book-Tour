@@ -9,8 +9,13 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user_id = session[:user_id]
-    @review.save
-    redirect_to @review
+    if @review.valid?
+      @review.save
+      redirect_to @review
+    else
+      @book = Book.find(params[:review][:book_id])
+      render :new
+    end
   end
 
   def edit
