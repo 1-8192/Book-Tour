@@ -11,12 +11,15 @@
 
   <body>
 
-  <nav>
-    <%= link_to 'Destinations', destinations_path %>
-    <%= link_to 'Books', books_path %>
-    <% if session[:user_id] %>
-      <%= link_to 'Your Profile', user_path(session[:user_id]) %>
-    <% end %>
+  <nav class = "nav_bar">
+    <ul>
+      <li><% if session[:user_id] %></li>
+      <li><%= link_to 'Your Profile', user_path(session[:user_id]) %></li>
+      <% end %>
+      <li><%= link_to 'Destinations', destinations_path %></li>
+      <li><%= link_to 'Books', books_path %></li>
+
+    </ul>
   </nav>
 
     <%= yield %>
