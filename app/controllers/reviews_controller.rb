@@ -41,8 +41,4 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(:book_id, :destination_id, :title, :review_body)
   end
 
-  # def update_params
-  #   params.require(:review).permit()
-  # end
-
 end

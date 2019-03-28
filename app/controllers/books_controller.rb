@@ -5,6 +5,9 @@ class BooksController < ApplicationController
     if @books == Book.all
       @books = Book.search_by_author(params[:search])
     end
+    if @books == Book.all
+      @books = Book.search_by_genre(params[:search])
+    end
   end
 
   def show

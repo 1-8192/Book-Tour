@@ -29,4 +29,8 @@ class Destination < ApplicationRecord
     end
   end
 
+  def self.random_destination
+    self.all.sample
+  end
+
 end

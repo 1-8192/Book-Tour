@@ -32,4 +32,21 @@ class Book < ApplicationRecord
     end
   end
 
+  def self.search_by_genre(search)
+    if search
+      temp_array = self.where("genre LIKE ?", "%#{search}%")
+      if !temp_array.empty?
+        temp_array
+      else
+        self.all
+      end
+    else
+      self.all
+    end
+  end
+
+  def self.random_book
+    self.all.sample
+  end
+
 end

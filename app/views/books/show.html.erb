@@ -16,7 +16,7 @@ Reviews by other travelers who have read this book:
 
 
 
-
+<% if logged_in? %>
 <%= form_tag(reading_lists_path, method: :post) do %>
   <%= hidden_field_tag :book_id, @book.id %>
   <%= collection_select(:destination, :destination_id, Destination.all, :id, :name) %>
@@ -28,3 +28,4 @@ Reviews by other travelers who have read this book:
   <%= hidden_field_tag :book_id, @book.id %>
   <%= submit_tag 'Review This Book' %>
 <% end %>
+<%end%>

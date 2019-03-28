@@ -6,6 +6,11 @@
 <%= submit_tag "Search"%>
 <% end %>
 
+<h5> Lacking inspiration? </h5>
+<%= form_tag(destination_path(@destinations.random_destination), method: :get) do %>
+<%= submit_tag "I'm feeling lucky" %>
+<%end%>
+
 <% @destinations.each do |d| %>
 
 <div class="">
