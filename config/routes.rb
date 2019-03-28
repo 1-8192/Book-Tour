@@ -4,17 +4,14 @@ Rails.application.routes.draw do
   root to: "users#home"
 
   resources :destinations, only: [:index, :show]
-
   resources :books, only: [:index, :show]
-
   resources :users
-
   resources :reviews
-
   resources :reading_lists
+
 
   get 'login', to: 'sessions#new', as: 'login'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy', as: 'logout'
-
+  get '/analytics/index', to: 'analytics#index'
 end

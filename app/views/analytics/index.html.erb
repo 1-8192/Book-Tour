@@ -1,0 +1,5 @@
+<ul>
+  <% @users.each do |u| %>
+  <li><%= u.username %> Number of reviews: <%= u.reviews.count %>
+  <%end%>
+</ul>
