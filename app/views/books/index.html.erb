@@ -1,5 +1,12 @@
 <h1>Books</h1>
 
+<h5>Find Book By Title</h5>
+<%= form_with method: :get, url: "/books" do |f| %>
+<%= f.text_field :search %>
+<%= f.submit "Search" %>
+<% end %>
+
+
 <% @books.each do |b| %>
 
 <div class="">

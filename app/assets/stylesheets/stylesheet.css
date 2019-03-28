@@ -7,6 +7,31 @@ body {
 
 /* ////////////////////////// HOME PAGE //////////////////////////// */
 
+.home {
+  background-image: url("world_map.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 14px 16px;
+  text-align: center;
+}
+
+.home a {
+  text-decoration: none;
+
+}
+
+.home a:visited {
+  color: black;
+}
+
+.home a:hover {
+  background-color: gray;
+}
+
+
+
+
+
 /* //////////////////////////NAV BAR  //////////////////////////// */
 
 /* .active {

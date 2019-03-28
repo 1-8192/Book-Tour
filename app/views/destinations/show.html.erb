@@ -7,21 +7,35 @@
 </ul>
 
 <h2>Tailored Book Recs</h2>
+  <% if @uniq_reviews.empty? %>
+    <%="No Recommendations Yet" %>
+  <% else %>
 <ul>
   <%@uniq_reviews.each do |book| %>
   <li><a href="/books/<%=book.id%>"><%=book.title%></a> </li>
 </ul>
 <%end%>
+<%end%>
+
+<% if @revsample1 %>
 
 <h2> Here are some reviews of books to make this trip special:</h2>
-Review for:<%= @revsample1.book.title %><br>
-Writte by user:<%= @revsample1.user.username%><br>
-<%= @revsample1.title %><br>
 
+<%end %>
+
+<%# May want an option to add your own review %>
+
+
+<% if @revsample1 %>
+  Review for:<%= @revsample1.book.title %><br>
+  Written by user:<%= @revsample1.user.username%><br>
+  <%= @revsample1.title %><br>
 <%= @revsample1.review_body %><br>
+<%end%>
 
-Review for:<%= @revsample2.book.title %><br>
-Writte by user:<%= @revsample2.user.username%><br>
-<%= @revsample2.title %><br>
-
-<%= @revsample2.review_body %><br>
+<% if @revsample2 %>
+  Review for:<%= @revsample2.book.title %><br>
+  Writte by user:<%= @revsample2.user.username%><br>
+  <%= @revsample2.title %><br>
+  <%= @revsample2.review_body %><br>
+<%end%>
