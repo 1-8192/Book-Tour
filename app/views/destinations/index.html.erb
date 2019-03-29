@@ -20,7 +20,7 @@
         <div class="column is-one-third">
           <div class="notification">
             <%= link_to d.name, d %>
-            <p class="is-size-4"><%= d.description %>
+            <p class="is-size-4"><%= d.description.first(120) + "..." %>
             </p>
           </div>
         </div>

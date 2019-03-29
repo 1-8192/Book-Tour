@@ -1,4 +1,12 @@
-<h1><%= "EDIT YOUR REVIEW FOR #{@review.book.title} at #{@review.destination.name}" %></h1>
+<div class="bg-img-rev">
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<h2><%= "Edit your review for #{@review.book.title} at #{@review.destination.name}" %></h1>
 
 <%= form_for @review do |f| %>
 
@@ -9,3 +17,4 @@
   <%= f.submit "Submit Review" %>
 
 <% end %>
+</div>

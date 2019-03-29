@@ -70,6 +70,15 @@ body {
   height: 100%;
 }
 
+.bg-img-rev {
+  background: url("header.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+}
+
 /* .bg-color {
   background-color: #B8CAD2;
 } */
