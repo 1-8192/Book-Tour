@@ -13,7 +13,7 @@
 <% end %>
 </div>
 
-<%= form_tag(book_path(@books.random_book), method: :get) do %>
+<%= form_tag(book_path(Book.random_book), method: :get) do %>
 <%= submit_tag "I'm feeling lucky" %>
 <%end%>
 

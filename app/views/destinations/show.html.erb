@@ -32,7 +32,7 @@
         Book: <%= @revsample1.book.title %><br>
         Written by user:<%= @revsample1.user.username%><br>
         <%= @revsample1.title %><br>
-        <%= @revsample1.review_body %><br>
+        <%= @revsample1.review_body.first(120) + "..." %><br>
       </div>
     </div>
   <%end%>
@@ -43,7 +43,7 @@
       Book: <%= @revsample2.book.title %><br>
       Written by user:<%= @revsample2.user.username%><br>
       <%= @revsample2.title %><br>
-      <%= @revsample2.review_body %><br>
+      <%= @revsample2.review_body.first(120) + "..." %><br>
     </div>
   </div>
   <%end%>

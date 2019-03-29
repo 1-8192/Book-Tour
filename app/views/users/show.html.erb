@@ -4,15 +4,15 @@
 <br>
 <br>
 
-<div class="notification">
+<div class="column is-centered has-text-centered">
 <h1> Hello, <%= @user.username %>. Welcome back. </h1>
 </div>
 
 <div class="w3-container w3-padding-5" id="projects">
-   <h3 class="w3-border-bottom w3-border-black w3-padding-5"><%= link_to "Explore destinations", destinations_path %></h3>
+   <h3 class="w3-border-bottom w3-border-black w3-padding-5"><%= link_to "Explore Destinations", destinations_path %></h3>
  </div>
 
-<div class="notification">
+<div class="notification has-text-centered">
 Your Reviews:
 <ul>
   <% @reviews.each do |r| %>

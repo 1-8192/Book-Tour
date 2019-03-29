@@ -15,16 +15,15 @@
 </ul>
 
 <%= form_for @review do |f| %>
-
+  <div class="notification">
   <%= f.label :book %>
   <%= f.text_field :book_id, value: @book.title, readonly: true %><br>
   <%= f.hidden_field :book_id, value: @book.id %>
 
-  <%= f.collection_select :destination_id, Destination.all, :id, :name %><br>
-
+  Select the trip where you read the book<%= f.collection_select :destination_id, Destination.all, :id, :name %><br>
   <%= f.label :review_title %>
   <%= f.text_field :title %><br>
-
+  </div>
   <%= f.text_area(:review_body, :size => "50x10") %>
   <%= f.submit "Submit Review" %>
 
