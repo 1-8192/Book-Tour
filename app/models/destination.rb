@@ -23,7 +23,12 @@ class Destination < ApplicationRecord
 
   def self.search_by_country(search)
     if search
-      self.where("country LIKE ?", "%#{search}%")
+      temp_array = self.where("country LIKE ?", "%#{search}%")
+      if !temp_array.empty?
+        temp_array
+      else
+        self.all
+      end
     else
       self.all
     end

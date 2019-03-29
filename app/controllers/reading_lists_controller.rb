@@ -12,6 +12,7 @@ class ReadingListsController < ApplicationController
     @reading_list.destination_id = @destination.id
     @reading_list.user_id = session[:user_id]
     @reading_list.save
+    flash[:notice] = "Successfully added to your reading list for #{@destination.name}"
     redirect_to @book
   end
 

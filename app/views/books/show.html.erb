@@ -5,6 +5,9 @@
 <br>
 <div class="notification">
 <h1><%= @book.title %></h1>
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
 <%= image_tag "book/#{1+rand(4)}.png"%>
 <ul>
   <li>Author: <%= @book.author %></li>
