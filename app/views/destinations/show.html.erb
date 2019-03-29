@@ -19,7 +19,7 @@
       <h2>Tailored Book Recs</h2><br>
       <ul>
         <%@uniq_reviews.each do |book| %>
-        <li><a href="/books/<%=book.id%>"><%=book.title%></a> </li>
+        <li><a href="/books/<%=book.id%>"><%=book.title%></a> by <%=book.author%></li>
       </ul>
       <%end%>
       </div>

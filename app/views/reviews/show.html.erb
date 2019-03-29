@@ -28,7 +28,8 @@ Review Title: <%= @review.title %> by <%= @review.user.username %><br>
         </div>
       </div>
 <%end%>
-<br>
+<br><br>
+<%= link_to 'back to book', book_path(@review.book.id)%>
 <br>
 </div>
 </div>
