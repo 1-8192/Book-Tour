@@ -1,24 +1,11 @@
-# README
+# The Book Tour
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#OVERVIEW
+The Book Tour is an app that matches trip destinations with related books. Visitors can create reading lists for their own trips based on books that were written by local authors, take place in the destination, or are otherwise connected to the location. Visitors can also review the books they read on vacation to help others build their own vacation reading lists.
 
-Things you may want to cover:
+#Installation Instructions
 
-* Ruby version
+To run on a localhost bundle install the gems and fire up that rails s!
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#Authors
+Meredith Strickland and Alessandro Allegranzi
