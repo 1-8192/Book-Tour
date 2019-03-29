@@ -1,41 +1,50 @@
-<h1>Information About <%= @destination.name %></h1>
+<div class="bg-img-dest">
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="notification">
+    <h2><%= @destination.name %></h2>
 
-<ul>
-  <li><%= @destination.country %></li>
-  <li><%= @destination.continent %></li>
-  <li><%= @destination.description %></li>
-</ul>
+    <ul>
+      <li>Country: <%= @destination.country %></li>
+      <li>Continent: <%= @destination.continent %></li>
+      <li>Description: <br><%= @destination.description %></li>
+    </ul><br>
+  </div>
 
-<h2>Tailored Book Recs</h2>
-  <% if @uniq_reviews.empty? %>
-    <%="No Recommendations Yet" %>
-  <% else %>
-<ul>
-  <%@uniq_reviews.each do |book| %>
-  <li><a href="/books/<%=book.id%>"><%=book.title%></a> </li>
-</ul>
-<%end%>
-<%end%>
+  <% if !@uniq_reviews.empty? %>
+    <div class="notification">
+      <h2>Tailored Book Recs</h2><br>
+      <ul>
+        <%@uniq_reviews.each do |book| %>
+        <li><a href="/books/<%=book.id%>"><%=book.title%></a> </li>
+      </ul>
+      <%end%>
+      </div>
+  <%end%>
 
-<% if @revsample1 %>
+  <div class="columns is-centered">
+  <% if @revsample1 %>
+    <div class="column is one-half">
+      <div class="notification">
+        Book: <%= @revsample1.book.title %><br>
+        Written by user:<%= @revsample1.user.username%><br>
+        <%= @revsample1.title %><br>
+        <%= @revsample1.review_body %><br>
+      </div>
+    </div>
+  <%end%>
 
-<h2> Here are some reviews of books to make this trip special:</h2>
-
-<%end %>
-
-<%# May want an option to add your own review %>
-
-
-<% if @revsample1 %>
-  Review for:<%= @revsample1.book.title %><br>
-  Written by user:<%= @revsample1.user.username%><br>
-  <%= @revsample1.title %><br>
-<%= @revsample1.review_body %><br>
-<%end%>
-
-<% if @revsample2 %>
-  Review for:<%= @revsample2.book.title %><br>
-  Writte by user:<%= @revsample2.user.username%><br>
-  <%= @revsample2.title %><br>
-  <%= @revsample2.review_body %><br>
-<%end%>
+  <% if @revsample2 %>
+  <div class="column is one-half">
+    <div class="notification">
+      Book: <%= @revsample2.book.title %><br>
+      Written by user:<%= @revsample2.user.username%><br>
+      <%= @revsample2.title %><br>
+      <%= @revsample2.review_body %><br>
+    </div>
+  </div>
+  <%end%>
+  </div>
+</div>

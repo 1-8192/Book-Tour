@@ -1,10 +1,18 @@
+<div class="bg-img-user">
+<br>
+<br>
+<br>
+<br>
+
+<div class="notification">
 <h1> Hello, <%= @user.username %>. Welcome back. </h1>
+</div>
 
-<%= form_tag(user_path(@user), method: :delete) do %>
-<%= submit_tag "Delete Account" %>
-<% end%>
+<div class="w3-container w3-padding-5" id="projects">
+   <h3 class="w3-border-bottom w3-border-black w3-padding-5"><%= link_to "Explore destinations", destinations_path %></h3>
+ </div>
 
-<%= link_to "Explore destinations", destinations_path %>
+<div class="notification">
 Your Reviews:
 <ul>
   <% @reviews.each do |r| %>
@@ -23,7 +31,15 @@ Your trip reading lists:
   <%end%>
 </ul>
 
+<div class="w3-container w3-padding-5" id="projects">
+   <h3 class="w3-border-bottom w3-border-black w3-padding-5"></h3>
+ </div>
 
 <%= form_tag(logout_path, method: :delete) do %>
 <%= submit_tag "Logout" %>
+<%= form_tag(user_path(@user), method: :delete) do %>
+<%= submit_tag "Delete Account" %>
+<% end%>
 <% end %>
+</div>
+</div>

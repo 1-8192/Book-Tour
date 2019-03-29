@@ -1,10 +1,30 @@
-<%= @review.book.title %>
-<%= @review.destination.name %>
-<%= @review.title %>
-<%= @review.user.username %>
-<%= @review.review_body %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+Book: <%= @review.book.title %><br>
+Reviewed for a trip to: <%= @review.destination.name %><br>
+Review Title: <%= @review.title %> by <%= @review.user.username %><br>
+<%= @review.review_body %><br><br>
 
 <% if @review.user_id == current_user.id %>
- <%= link_to "Edit Review", edit_review_path %>
- <%= link_to "Delete Review", review_path(@review), method: :delete %>
+   <div class="w3-col l3 m2 w3-margin-bottom">
+     <div class="w3-display-container">
+       <div class="w3-display-topleft w3-gray"><%= link_to "Edit Review", edit_review_path %></div>
+       <img src="/w3images/house5.jpg" alt="House" style="width:100%">
+     </div>
+   </div>
+      <div class="w3-col l3 m2 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-gray"><%= link_to "Delete Review", review_path(@review), method: :delete %></div>
+          <img src="/w3images/house5.jpg" alt="House" style="width:100%">
+        </div>
+      </div>
 <%end%>
+<br>
+<br>

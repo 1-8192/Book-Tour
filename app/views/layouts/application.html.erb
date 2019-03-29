@@ -1,59 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>BookTour</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <style>
-
-    .hero{
-        background: url("world_map.jpg") center;
-      }
-
-    </style>
-  </head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>The Book Tour</title>
+        <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+        <!-- Bulma Version 0.7.4-->
+        <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.4/css/bulma.min.css" />
+        <%= stylesheet_link_tag    'stylesheet', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
 
   <body>
 
-  <header> The Book Tour<br>
-    <p><i>“The world is a book
-    <br />and those who do not travel read only one page.” </i></p>
-    <p>-St. Augustine</p>
+  <div class="w3-top">
+   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+     <a href="#home" class="w3-bar-item w3-button"><b>BOOK TOUR</b> Read Around the World</a>
+     <!-- Float links to the right. Hide them on small screens -->
+     <div class="w3-right w3-hide-small">
+       <% if session[:user_id] %>
+       <p class="w3-bar-item w3-button"><%= link_to 'Your Profile', user_path(session[:user_id]) %>
+       <%end%></p>
+       <p class="class=w3-bar-item w3-button"><%= link_to "Destinations", destinations_path %></p>
+       <p class="class=w3-bar-item w3-button"><%= link_to "Books", books_path %></p>
+     </div>
+   </div>
+  </div>
 
-    <nav class="navbar" data-bulma="navbar">
-        <div class="navbar-brand">
-          <% if session[:user_id] %>
-            <p class="navbar-item"><%= link_to 'Your Profile', user_path(session[:user_id]) %></p>
-          <%end%>
-            <p class="navbar-item"><%= link_to "Destinations", destinations_path %></p>
-            <p class="navbar-item"><%= link_to "Books", books_path %></p>
-    </nav>
-
-
-  </header><br>
 
     <%= yield %>
 
-    <footer class="container branding text-center">
-        <br>
-        <small> <strong style="color:#BBB;">
-          <% case 1 + rand(4)
-          when 1 %>
-          <p><i>“The world is a book and those who do not travel read only one page.” </i></p> <p>-St. Augustine</p>
-          <% when 2 %>
-          <p><i>“Books are the plane, and the train, and the road. They are the destination, and the journey. They are home.”</i></p> <p>-Anna Quindlen</p>
-          <% when 3 %>
-          <p><i>“It is good to have an end to journey toward; but it is the journey that matters, in the end.” </i></p> <p>-Ursula K. LeGuin</p>
-          <% when 4 %>
-          <p><i>“Travel far enough, you meet yourself.”</i></p> <p>-David Mitchell</p>
-          <% when 5 %>
-          <p><i>“I read; I travel; I become” </i></p> <p>-Derek Walcott</p>
-          <% end %>
-        </strong></small>
-      </footer>
+    <footer class="w3-center w3-white w3-padding-16">
+    <small> <strong style="color:#BBB;">
+      <% case 1 + rand(4)
+      when 1 %>
+      <p><i>“The world is a book and those who do not travel read only one page.” </i></p> <p>-St. Augustine</p>
+      <% when 2 %>
+      <p><i>“Books are the plane, and the train, and the road. They are the destination, and the journey. They are home.”</i></p> <p>-Anna Quindlen</p>
+      <% when 3 %>
+      <p><i>“It is good to have an end to journey toward; but it is the journey that matters, in the end.” </i></p> <p>-Ursula K. LeGuin</p>
+      <% when 4 %>
+      <p><i>“Travel far enough, you meet yourself.”</i></p> <p>-David Mitchell</p>
+      <% when 5 %>
+      <p><i>“I read; I travel; I become” </i></p> <p>-Derek Walcott</p>
+      <% end %>
+    </strong></small>
+    </footer>
 
   </body>
 </html>

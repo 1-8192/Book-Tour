@@ -1,18 +1,30 @@
+<div class="bg-img-book">
+<br>
+<br>
+<br>
+<br>
+<div class="notification">
 <h1><%= @book.title %></h1>
 
 <ul>
-  <li><%= @book.author %></li>
-  <li><%= @book.genre %></li>
-  <li><%= @book.description %></li>
-  <li><%= @book.publication_date %></li>
+  <li>Author: <%= @book.author %></li>
+  <li>Genre: <%=@book.genre %></li>
+  <li>Description:<br> <%= @book.description %></li>
+  <li>Publication date: <%= @book.publication_date %></li>
 </ul>
+</div>
 
-Reviews by other travelers who have read this book:
+
+<% if !@reviews.empty? %>
+<div class="notification">
+<%= "Reviews by other travelers who have read this book:" %>
 <ul>
   <% @reviews.each do |r| %>
-  <li><%= link_to r.title, r %></li>
+  <li><%= link_to r.title, r %></li> by <%= r.user.username%>
 <ul>
   <%end%>
+</div>
+<%end%>
 
 
 
@@ -29,3 +41,4 @@ Reviews by other travelers who have read this book:
   <%= submit_tag 'Review This Book' %>
 <% end %>
 <%end%>
+</div>

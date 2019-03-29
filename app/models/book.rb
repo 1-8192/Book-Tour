@@ -50,4 +50,17 @@ class Book < ApplicationRecord
     self.all.sample
   end
 
+  def self.most_reviewed_book
+    i = 0
+    most_reviewed_book = []
+    self.all.each do |book|
+      x = book.reviews.count
+      if x > i
+        most_reviewed_book = book
+        i = x
+      end
+    end
+    most_reviewed_book
+  end
+
 end

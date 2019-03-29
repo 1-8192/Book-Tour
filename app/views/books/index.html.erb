@@ -1,12 +1,18 @@
-<h1>Books</h1>
+<div class="bg-img-book">
+<br>
+<br>
+<br>
+<br>
+<br>
 
+<div class="notification">
 <h5>Find Books by Title, Genre, or Author</h5>
 <%= form_tag(books_path, method: :get) do  %>
 <%= text_field_tag :search %>
 <%= submit_tag "Search"%>
 <% end %>
+</div>
 
-<h5> Lacking inspiration? </h5>
 <%= form_tag(book_path(@books.random_book), method: :get) do %>
 <%= submit_tag "I'm feeling lucky" %>
 <%end%>
@@ -21,4 +27,5 @@
       </div>
     </div>
     <% end %>
+</div>
 </div>

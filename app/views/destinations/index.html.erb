@@ -1,24 +1,30 @@
-<h5>Which Destination Would You Like to Learn More About?</h5>
-
-<h5>Filter Destinations by Country:</h5>
-<%= form_tag(destinations_path, method: :get) do  %>
-<%= text_field_tag :search %>
-<%= submit_tag "Search"%>
-<% end %>
-
-<h5> Lacking inspiration? </h5>
-<%= form_tag(destination_path(@destinations.random_destination), method: :get) do %>
-<%= submit_tag "I'm feeling lucky" %>
-<%end%>
-
-<div class="columns is-multiline is-centered">
-  <% @destinations.each do |d| %>
-    <div class="column is-one-third">
-      <div class="notification">
-        <%= link_to d.name, d %>
-        <p class="is-size-4"><%= d.description %>
-        </p>
-      </div>
-    </div>
+<div class="bg-img-dest">
+  <br>
+  <br>
+  <br>
+  <br>
+    <div class="notification">
+    <h5>Filter Destinations by Country:</h5>
+    <%= form_tag(destinations_path, method: :get) do  %>
+    <%= text_field_tag :search %>
+    <%= submit_tag "Search"%>
     <% end %>
+    </div>
+
+    <%= form_tag(destination_path(@destinations.random_destination), method: :get) do %>
+    <%= submit_tag "I'm feeling lucky" %>
+    <%end%>
+
+    <div class="columns is-multiline is-centered">
+      <% @destinations.each do |d| %>
+        <div class="column is-one-third">
+          <div class="notification">
+            <%= link_to d.name, d %>
+            <p class="is-size-4"><%= d.description %>
+            </p>
+          </div>
+        </div>
+        <% end %>
+    </div>
+</div>
 </div>
