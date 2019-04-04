@@ -8,7 +8,7 @@
 <% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
   <% end %>
-<%= image_tag "book/#{1+rand(4)}.png"%>
+<%= image_tag("book/#{1+rand(4)}.png", size: "200x100")%>
 <ul>
   <li>Author: <%= @book.author %></li>
   <li>Genre: <%=@book.genre %></li>
