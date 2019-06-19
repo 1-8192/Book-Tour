@@ -17,25 +17,23 @@
 
   <body>
 
-  <nav class="navbar is-fixed-top is-mobile has-background-white-ter" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-fixed-top is-mobile is-transparent" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <b>BOOK TOUR</b> Read Around the World
+      <b>BOOK TOUR</b>
     </div>
-    
-  </nav>
-  <div class="w3-top">
-   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-     <b>BOOK TOUR</b> Read Around the World
-     <!-- Float links to the right. Hide them on small screens -->
-     <div class="w3-right w3-hide-small">
-       <% if session[:user_id] %>
+    <div class="navbar-start">
+      Read Around the World
+    </div>
+    <div class="navbar-end">
+      <% if session[:user_id] %>
        <p class="w3-bar-item w3-button"><%= link_to 'Your Profile', user_path(session[:user_id]) %>
        <%end%></p>
        <p class="class=w3-bar-item w3-button"><%= link_to "Destinations", destinations_path %></p>
-       <p class="class=w3-bar-item w3-button"><%= link_to "Books", books_path %></p>
-     </div>
-   </div>
-  </div>
+       <p class=
+    </div>
+  </nav>
+
+  
 
 
     <%= yield %>
