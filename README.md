@@ -5,7 +5,7 @@ The Book Tour is an app that matches trip destinations with related books. Visit
 
 #Installation Instructions
 
-To run on a localhost bundle install the gems and fire up that rails s!
+To run on a localhost bundle install the gems, migrate and seed the data, and fire up that rails s!
 
 #Authors
 Meredith Strickland and Alessandro Allegranzi
