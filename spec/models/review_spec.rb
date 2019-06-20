@@ -1,18 +1,18 @@
 require 'rails_helper'
 
-describe Review do
+describe Book, type: :model do
   let(:attributes) do
     {
-      title: "test",
-      review_body: "This doesn't matter",
-      book_id: 1,
-      destination_id: 1,
-      user_id: 1
+      title: "fake",
+      author: "fake",
+      description: "test",
+      publication_date: 2009,
+      genre: 'fake'
     }
   end
 
   it "is considered valid" do
-    expect(Destination.new(attributes)).to be_valid
+    expect(Book.new(attributes)).to be_valid
   end
-
 end
+
