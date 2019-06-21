@@ -15,4 +15,3 @@ describe Book, type: :model do
     expect(Book.new(attributes)).to be_valid
   end
 end
-
