@@ -1,6 +1,7 @@
 # The Book Tour
 
 #OVERVIEW
+
 The Book Tour is an app that matches trip destinations with related books. Visitors can create reading lists for their own trips based on books that were written by local authors, take place in the destination, or are otherwise connected to the location. Visitors can also review the books they read on vacation to help others build their own vacation reading lists. The site was built with Ruby on Rails. It uses sessions to authenticate users. All the data has been seeded by the developers.
 
 #Version
@@ -17,7 +18,9 @@ The Book Tour is an app that matches trip destinations with related books. Visit
 6. Enjoy!
 
 #Authors
+
 Meredith Strickland and Alessandro Allegranzi
 
 #Acknowledgments
+
 Thanks to Rails and Bulma, which were the main tools used to build the site.
